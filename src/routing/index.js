@@ -1,13 +1,16 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-import AllPostList from "../screens/AllPostList";
-import PostDetails from "../screens/PostDetails";
+import { Switch, Route,Redirect } from "react-router-dom";
+import { Home } from '../screens/Home';
+import { AddEmployee } from '../screens/AddEmployee';
+import { EditEmployee } from '../screens/EditEmployee';
 function index() {
   return (
-    <div>
+    <div className="App">
       <Switch>
-        <Route exact path="/" component={AllPostList} />
-        <Route path="/postdetails" component={PostDetails} />
+          <Route path="/" component={Home} exact />
+          <Route path="/add" component={AddEmployee} exact />
+          <Route path="/edit/:id" component={EditEmployee} exact />
+        
       </Switch>
     </div>
   );
