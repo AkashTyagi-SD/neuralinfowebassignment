@@ -7,6 +7,7 @@ const initialState = {
     {
       id: 1,
       name: "Sammy",
+      email:"sammy@gmail.com",
       location: "DigitalOcean",
       designation: "Shark",
     },
