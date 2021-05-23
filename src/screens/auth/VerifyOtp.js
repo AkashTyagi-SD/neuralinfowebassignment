@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-function VerifyOtp() {
+function VerifyOtp () {
     return (
         <div>
             <h1>Verify Otp</h1>
         </div>
-    )
+    );
 }
 
-export default VerifyOtp
+export default VerifyOtp;

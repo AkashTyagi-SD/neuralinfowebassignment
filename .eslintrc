@@ -1,0 +1,22 @@
+{
+    "parser": "babel-eslint",
+    "extends": "react",
+    "rules": {
+        "max-len":"off",
+        "comma-dangle":"off",
+        "no-nested-ternary":"off",
+        "react/prop-types":"off",
+        "space-before-function-paren":"off",
+        "one-var":"off",
+        "react/jsx-boolean-value":"off"
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }

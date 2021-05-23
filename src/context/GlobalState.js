@@ -1,55 +1,55 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from 'react';
 
-import appReducer from "../reducer/Appreducer";
+import appReducer from '../reducer/Appreducer';
 
 const initialState = {
-  employees: [
-    {
-      id: 1,
-      name: "Sammy",
-      email:"sammy@gmail.com",
-      location: "DigitalOcean",
-      designation: "Shark",
-    },
-  ],
+    employees: [
+        {
+            id: 1,
+            name: 'Sammy',
+            email: 'sammy@gmail.com',
+            location: 'DigitalOcean',
+            designation: 'Shark',
+        },
+    ],
 };
 
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(appReducer, initialState);
+    const [state, dispatch] = useReducer(appReducer, initialState);
 
-  function addEmployee(employee) {
-    dispatch({
-      type: "ADD_EMPLOYEE",
-      payload: employee,
-    });
-  }
+    function addEmployee (employee) {
+        dispatch({
+            type: 'ADD_EMPLOYEE',
+            payload: employee,
+        });
+    }
 
-  function editEmployee(employee) {
-    dispatch({
-      type: "EDIT_EMPLOYEE",
-      payload: employee,
-    });
-  }
+    function editEmployee (employee) {
+        dispatch({
+            type: 'EDIT_EMPLOYEE',
+            payload: employee,
+        });
+    }
 
-  function removeEmployee(id) {
-    dispatch({
-      type: "REMOVE_EMPLOYEE",
-      payload: id,
-    });
-  }
+    function removeEmployee (id) {
+        dispatch({
+            type: 'REMOVE_EMPLOYEE',
+            payload: id,
+        });
+    }
 
-  return (
-    <GlobalContext.Provider
-      value={{
-        employees: state.employees,
-        addEmployee,
-        editEmployee,
-        removeEmployee,
-      }}
-    >
-      {children}
-    </GlobalContext.Provider>
-  );
+    return (
+        <GlobalContext.Provider
+            value={{
+                employees: state.employees,
+                addEmployee,
+                editEmployee,
+                removeEmployee,
+            }}
+        >
+            {children}
+        </GlobalContext.Provider>
+    );
 };
